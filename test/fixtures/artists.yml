@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  Activity: MyString
+  Obtained: false
+  DateChecked: 2012-03-13
+
+two:
+  name: MyString
+  Activity: MyString
+  Obtained: false
+  DateChecked: 2012-03-13

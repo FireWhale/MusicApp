@@ -1,4 +1,13 @@
 MusicApp::Application.routes.draw do
+  resources :albums, :artists, :sources
+	
+	get "pages/home"
+	
+	match '/help',    :to => 'pages#help'
+  
+	root :to => 'pages#home'
+	
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

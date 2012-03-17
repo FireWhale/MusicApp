@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  releasedate: 2012-03-13
+  Composer: MyString
+  Publisher: MyString
+  Genre: 
+  AlbumObtained: false
+  artist_id: 1
+  source_id: 1
+
+two:
+  name: MyString
+  releasedate: 2012-03-13
+  Composer: MyString
+  Publisher: MyString
+  Genre: 
+  AlbumObtained: false
+  artist_id: 1
+  source_id: 1

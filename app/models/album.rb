@@ -2,7 +2,7 @@ class Album < ActiveRecord::Base
 	attr_accessible :name, :releasedate, :Composer, :Publisher, :Genre, :AlbumObtained
 	
 	has_and_belongs_to_many :artists
-	has_and_belongs_to_many :albums
+	has_and_belongs_to_many :sources
 	
 	validates :name, :presence => true
 	validates :artist_id, :presence => true

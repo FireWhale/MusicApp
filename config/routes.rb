@@ -1,10 +1,12 @@
 MusicApp::Application.routes.draw do
+  get "albums/new"
+
   resources :albums, :artists, :sources
 	
 	get "pages/home"
 	
 	match '/help',    :to => 'pages#help'
-  
+  match '/addalbum', :to => 'albums#new'
 	root :to => 'pages#home'
 	
 

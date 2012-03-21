@@ -10,19 +10,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120313060825) do
+ActiveRecord::Schema.define(:version => 20120321012045) do
 
   create_table "albums", :force => true do |t|
     t.string   "name"
     t.date     "releasedate"
-    t.string   "Composer"
-    t.string   "Publisher"
-    t.string   "Genre"
-    t.boolean  "AlbumObtained"
-    t.integer  "artist_id"
-    t.integer  "source_id"
+    t.string   "genre"
+    t.string   "publisher"
+    t.boolean  "albumobtained"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "albums_artists", :id => false, :force => true do |t|
+    t.integer  "album_id"
+    t.integer  "artist_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "albums_series", :id => false, :force => true do |t|
+    t.integer "album_id"
+    t.integer "series_id"
   end
 
   create_table "artists", :force => true do |t|
@@ -34,11 +43,10 @@ ActiveRecord::Schema.define(:version => 20120313060825) do
     t.datetime "updated_at"
   end
 
-  create_table "sources", :force => true do |t|
+  create_table "series", :force => true do |t|
     t.string   "name"
-    t.string   "Activity"
-    t.boolean  "Obtained"
-    t.date     "DateChecked"
+    t.string   "activity"
+    t.boolean  "obtained"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

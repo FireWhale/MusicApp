@@ -1,6 +1,6 @@
-class CreateArtists < ActiveRecord::Migration
+class CreateSeries < ActiveRecord::Migration
   def self.up
-    create_table :artists do |t|
+    create_table :series do |t|
       t.string :name
       t.string :activity
       t.boolean :obtained
@@ -10,6 +10,6 @@ class CreateArtists < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :artists
+    drop_table :series
   end
 end

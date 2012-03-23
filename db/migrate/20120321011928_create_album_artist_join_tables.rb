@@ -1,6 +1,6 @@
 class CreateAlbumArtistJoinTables < ActiveRecord::Migration
   def self.up
-    create_table :albums_artists, :id => false do |t|
+    create_table :albumsartists, :id => false do |t|
       t.integer :album_id
       t.integer :artist_id
 
@@ -9,6 +9,6 @@ class CreateAlbumArtistJoinTables < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :albums_artists
+    drop_table :albumsartists
   end
 end

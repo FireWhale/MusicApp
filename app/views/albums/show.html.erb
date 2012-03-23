@@ -1,24 +1,12 @@
-<h1>Sign up</h1>
-
-<%= form_for(@album) do |f| %>
-  <%= render 'shared/error_messages', :object => f.object %>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :releasedate %><br />
-    <%= f.date_select :releasedate %>
-  </div>
-  <div class="field">
-    <%= f.label :Composer %><br />
-    <%= f.password_field :Composer %>
-  </div>
-  <div class="field">
-    <%= f.label :Publisher, "Publisher" %><br />
-    <%= f.password_field :Publisher %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Add Album" %>
-  </div>
-<% end %>
+<table class="profile" summary="Album information">
+  <tr>
+    <td class="main">
+      <h1>
+        <%= @album.name %>
+      </h1>
+    </td>
+    <td class="sidebar round">
+			<%= link_to 'Edit Album', edit_album_path(@album) %>
+    </td>
+  </tr>
+</table>

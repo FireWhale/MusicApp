@@ -1,22 +1,22 @@
 <h1>Add an Album!</h1>
 
-<%= form_for(@album) do |f| %>
+<%= form_for @album do |f| %>
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :releasedate %><br />
+    <%= f.label :releasedate, "Release Date"%><br />
     <%= f.date_select :releasedate %>
   </div>
   <div class="field">
-    <%= f.label :Composer %><br />
-    <%= f.password_field :Composer %>
+    <%= f.label :genre %><br />
+    <%= f.text_field :genre %>
   </div>
   <div class="field">
-    <%= f.label :Publisher, "Publisher" %><br />
-    <%= f.password_field :Publisher %>
-  </div>
+    <%= f.label :publisher, "Publisher" %><br />
+    <%= f.text_field :publisher %>
+  </div>	
   <div class="actions">
     <%= f.submit "Add Album" %>
   </div>

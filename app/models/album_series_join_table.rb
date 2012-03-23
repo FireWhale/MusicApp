@@ -1,2 +1,2 @@
-class AlbumSeriesJoinTable < ActiveRecord::Base
+class Albums_Series < ActiveRecord::Base
 end

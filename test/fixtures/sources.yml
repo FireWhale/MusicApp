@@ -2,12 +2,10 @@
 
 one:
   name: MyString
-  Activity: MyString
-  Obtained: false
-  DateChecked: 2012-03-13
+  activity: MyString
+  obtained: false
 
 two:
   name: MyString
-  Activity: MyString
-  Obtained: false
-  DateChecked: 2012-03-13
+  activity: MyString
+  obtained: false

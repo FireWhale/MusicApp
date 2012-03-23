@@ -1,7 +1,7 @@
 MusicApp::Application.routes.draw do
   get "albums/new"
 
-  resources :albums, :artists, :sources, :albumsArtists
+ resources :albums, :artists, :sources
 	
 	get "pages/home"
 	

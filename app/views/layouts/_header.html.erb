@@ -1,12 +1,22 @@
 <header>
-  <%= link_to logo, root_path %>
-  <nav class="round">
-    <ul>
-      <li><%= link_to "Home", root_path %></li>
-      <li><%= link_to "Help", help_path %></li>     
-			<li><%= link_to "Add Album", addalbum_path %></li>
-			<li><%= link_to "Add Artist", addartist_path %></li>
-			
-    </ul>
-  </nav>
+		<%= link_to logo, root_path %>
+		<nav>
+			<ul>
+				<kawaii class ="round">
+					<li><%= link_to "Home", root_path %></li>
+					<li><%= link_to "Albums", albums_path %></li>
+					<li><%= link_to "Artists", artists_path %></li>			
+				</kawaii></br>		
+			</ul>
+			<ul>	
+				<kawaii class ="round">
+					<li><%= link_to "Add Album", addalbum_path %></li>
+					<li><%= link_to "Add Artist", addartist_path %></li>
+				</kawaii>
+			</ul>
+		</nav>
+
+		<nav class="round">
+
+		</nav>
 </header>

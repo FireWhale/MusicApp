@@ -4,6 +4,8 @@
 
 body {
   background: #66ddff;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
 header {
@@ -12,14 +14,14 @@ header {
 
 header img {
   padding: 1em;
-  background: #eee;
+  background: #fff;
 }
 
 section {
   margin-top: 1em;
   font-size: 100%;
   padding: 20px;
-  background: #eee;
+  background: #fff;
 }
 
 section h1 {
@@ -44,38 +46,36 @@ a:visited {
 
 /* Navigation */
 
+logoimg {
+}
 nav {
   float: right;
-}
-
-nav {
-  background-color: white;
+  background-color: none;
   padding: 0 0.7em;
   white-space: nowrap;
 }
-
 nav ul {
   margin: 0;
   padding: 0;
 }
-
 nav ul li {
   list-style-type: none;
   display: inline-block;
   padding: 0.2em 0;
 }
-
 nav ul li a {
   padding: 0 5px;
   font-weight: bold;
 }
-
 nav ul li a:visited {
   color: #09c;
 }
-
 nav ul li a:hover {
   text-decoration: underline;
+}
+kawaii {
+	background-color: white;
+	padding: 0 0.7em;
 }
 
 /* Sign up button */
@@ -141,4 +141,8 @@ ul.artists {
 
 .artists li {
   list-style: none;
+}
+
+ul.albums li {
+	list-style: none;
 }

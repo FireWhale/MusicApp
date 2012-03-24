@@ -1,6 +1,6 @@
 <h1>Edit</h1>
 
-<%= form_for(@album) do |f| %>
+<%= form_for @album, @artist do |f| %>
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
@@ -17,10 +17,12 @@
     <%= f.label :Publisher, "Publisher" %><br />
     <%= f.text_field :publisher %>
   </div>
-	<div class="field">
-		<%= f.label :Artistship, "THIS FIELD" %><br />
-		<%= select_tag :artist_id, options_for_select(Artist.all.collect {|artist| [artist.name, artist.id]}, @artist_list), :multiple => true, :prompt => 'Select Artist(s)' %>
+	<%= form_for :artistship do |f| %>
+		<div class="field">
+			<%= f.label "THIS FIELD" %><br />
+			<%= f.text_field :name %>
 		</div>
+	<% end %>
 	<div class="actions">
     <%= f.submit "Add Album" %>
   </div>

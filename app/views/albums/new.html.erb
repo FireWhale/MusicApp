@@ -14,10 +14,17 @@
     <%= f.text_field :genre %>
   </div>
   <div class="field">
-    <%= f.label :publisher, "Publisher" %><br />
+    <%= f.label "Publisher" %><br />
     <%= f.text_field :publisher %>
   </div>	
-  <div class="actions">
+	<%= fields_for :artist do |f| %>
+		<div class="field">
+			<%= f.label "Artist" %><br />
+			<%= f.text_field :name %>
+		</div>
+	<% end %>
+	<div class="actions">
     <%= f.submit "Add Album" %>
   </div>
+	
 <% end %>

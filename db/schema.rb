@@ -22,17 +22,17 @@ ActiveRecord::Schema.define(:version => 20120323115014) do
     t.datetime "updated_at"
   end
 
+  create_table "albums_artists", :id => false, :force => true do |t|
+    t.integer "album_id"
+    t.integer "artist_id"
+  end
+
   create_table "artists", :force => true do |t|
     t.string   "name"
     t.string   "activity"
     t.boolean  "obtained"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "artistships", :id => false, :force => true do |t|
-    t.integer "album_id"
-    t.integer "artist_id"
   end
 
   create_table "sources", :force => true do |t|

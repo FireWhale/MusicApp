@@ -1,9 +1,10 @@
 .container {
-
+	margin:auto;
+	max-width: 1000px
 }
 
 body {
-  background: #66ddff;
+  background: #ffffee;
 	padding-left: 20px;
 	padding-right: 20px;
 }
@@ -14,20 +15,22 @@ header {
 
 header img {
   padding: 1em;
-  background: #fff;
+  background: none;
 }
 
 section {
   margin-top: 1em;
   font-size: 100%;
-  padding: 20px;
-  background: #fff;
+  padding-top: 5px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 5px;
+  background: #ffeeaa;
 }
-
-section h1 {
-  font-size: 200%;
+TitleText {
+	border-left: 400px;
+	font-size: 200%;
 }
-
 /* Links */
 
 a {
@@ -46,8 +49,6 @@ a:visited {
 
 /* Navigation */
 
-logoimg {
-}
 nav {
   float: right;
   background-color: none;
@@ -73,25 +74,15 @@ nav ul li a:visited {
 nav ul li a:hover {
   text-decoration: underline;
 }
-kawaii {
-	background-color: white;
+navigational{
+	float: right;
+	background-color: #ffeeaa;
 	padding: 0 0.7em;
 }
-
-/* Sign up button */
-
-a.signup_button {
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  text-align: center;
-  width: 190px;
-  color: #fff;
-  background: #006400;
-  font-size: 150%;
-  font-weight: bold;
-  padding: 20px;
+logo{
+float: left;
 }
+/* Sign up button */
 
 .round {
   -moz-border-radius:    10px;
@@ -109,7 +100,9 @@ footer {
 }
 
 footer nav {
-  float: none;
+	background-color: #ffeeaa;
+	padding: 0 0.7em;
+	float: none;
 }
 
 /* User show page */

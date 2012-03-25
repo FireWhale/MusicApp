@@ -8,6 +8,7 @@ MusicApp::Application.routes.draw do
 	match '/help',    :to => 'pages#help'
   match '/addalbum', :to => 'albums#new'
 	match '/addartist', :to => 'artists#new'
+	match '/addsource', :to => 'sources#new'
 	match '/editalbum', :to => 'albums#edit'
 	
 	root :to => 'pages#home'

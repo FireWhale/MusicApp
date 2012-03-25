@@ -1,22 +1,25 @@
 <header>
+		<logo>
 		<%= link_to logo, root_path %>
+		</logo>
 		<nav>
 			<ul>
-				<kawaii class ="round">
+				<navigational class ="round">
 					<li><%= link_to "Home", root_path %></li>
 					<li><%= link_to "Albums", albums_path %></li>
-					<li><%= link_to "Artists", artists_path %></li>			
-				</kawaii></br>		
-			</ul>
+					<li><%= link_to "Artists", artists_path %></li>
+					<li><%= link_to "Series", sources_path %></li>						
+				</navigational></br>		
+			</ul></br>
 			<ul>	
-				<kawaii class ="round">
-					<li><%= link_to "Add Album", addalbum_path %></li>
-					<li><%= link_to "Add Artist", addartist_path %></li>
-				</kawaii>
+				<navigational class ="round">
+					<li><%= link_to "Add Album", addalbum_path %></li></br>
+					<li><%= link_to "Add Artist", addartist_path %></li></br>
+					<li><%= link_to "Add Source", addsource_path %></li>
+				</navigational>
 			</ul>
-		</nav>
-
-		<nav class="round">
-
-		</nav>
+		</nav>		
+		<TitleText>
+			FireWhale's </br> Music </br> Database
+		</TitleText>
 </header>

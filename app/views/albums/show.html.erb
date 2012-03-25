@@ -1,12 +1,23 @@
 <table class="profile" summary="Album information">
   <tr>
     <td class="main">
-      <h1>
-        <%= @album.name %>
-      </h1>
-    </td>
-    <td class="sidebar round">
-			<%= link_to 'Edit Album', edit_album_path(@album) %>
+		~Album Information!~
+		<h1>
+			<%= @album.name %>
+		</h1>
+		<%= link_to 'Edit Album', edit_album_path(@album) %>
+		<p> 
+			Release Date: <%= @album.releasedate %>
+		</p>
+		<p>
+			Publisher: <%= @album.publisher %>
+		</p>
+		Artist(s):
+		<% @artists.each do |artist| %>
+			<p>	
+				<%= link_to artist.name, artist_path(artist) %>
+			</p>
+		<% end %>
     </td>
   </tr>
 </table>

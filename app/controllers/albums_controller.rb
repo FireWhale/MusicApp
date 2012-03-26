@@ -20,16 +20,20 @@ class AlbumsController < ApplicationController
 	def create
 		@album = Album.new(params[:album])
 		@artistexists = Artist.find_by_name(params[:artist][:name])
-		if @artistexists.nil? == true
-			@album.artists.build(params[:artist])
-		else
-			@album.artists << Artist.find_by_name(params[:artist][:name])		
+		if params[:artist][:name].to_s.empty? == false
+			if @artistexists.nil? == true
+				@album.artists.build(params[:artist])
+			else
+				@album.artists << Artist.find_by_name(params[:artist][:name])		
+			end
 		end
-		@sourceexists = Source.find_by_name(params[:source][:name])
-		if @sourceexists.nil? == true
-			@album.sources.build(params[:source])
-		else
-			@album.sources << Source.find_by_name(params[:source][:name])		
+		if params[:source][:name].to_s.empty? == false
+			@sourceexists = Source.find_by_name(params[:source][:name])
+			if @sourceexists.nil? == true
+				@album.sources.build(params[:source])
+			else
+				@album.sources << Source.find_by_name(params[:source][:name])		
+			end
 		end
 		if @album.save
 			flash[:success] = "Album Successfully Created!"

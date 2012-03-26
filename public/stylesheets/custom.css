@@ -139,3 +139,11 @@ ul.artists {
 ul.albums li {
 	list-style: none;
 }
+
+ul.sources {
+	margin-top: 1em;
+}
+
+.sources li {
+	list-style: none;
+}

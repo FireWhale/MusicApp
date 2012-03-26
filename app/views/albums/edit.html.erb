@@ -32,6 +32,20 @@
 			<%= f.text_field :name %>
 		</div>
 	<% end %>
+	Source(s) (uncheck to remove):	
+	<% @sources.each do |each| %>
+		<div class="field">
+			<%= each.name %>
+			<%= hidden_field_tag each.name, 0 %>
+			<%= check_box_tag each.name, 1, true  %>
+		</div>
+	<% end %>	
+	<%= fields_for :source do |f| %>
+		<div class="field">
+			<%= f.label "New Source" %><br />
+			<%= f.text_field :name %>
+		</div>
+	<% end %>
 	<div class="actions">
 		<%= f.submit "Edit Album" %>
 	</div>

@@ -17,6 +17,8 @@
 		<% end %>
 		Add an Album!
 		<%= render 'shared/create_album_form' %>
+		<%= link_to "delete artist?", @artist, :method => :delete, :confirm => "You sure?",
+                                :title => "Delete #{@artist.name}" %>
     </td>
   </tr>
 </table>

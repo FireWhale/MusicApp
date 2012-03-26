@@ -22,6 +22,12 @@
 			<%= f.text_field :name %>
 		</div>
 	<% end %>
+	<%= fields_for :source do |f| %>
+		<div class="field">
+			<%= f.label "Source" %><br />
+			<%= f.text_field :name %>
+		</div>
+	<% end %>
 	<div class="actions">
 		<%= f.submit "Add Album" %>
 	</div>

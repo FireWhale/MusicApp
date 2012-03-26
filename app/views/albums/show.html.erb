@@ -13,11 +13,21 @@
 			Publisher: <%= @album.publisher %>
 		</p>
 		Artist(s):
-		<% @artists.each do |artist| %>
+		<% @artists.each do |each| %>
 			<p>	
-				<%= link_to artist.name, artist_path(artist) %>
+				<%= link_to each.name, artist_path(each) %>
 			</p>
 		<% end %>
+		Source(s):
+		<% @sources.each do |each| %>
+			<p>	
+				<%= link_to each.name, source_path(each) %>
+			</p>
+		<% end %>
+		<p>
+			<%= link_to "delete album?", @album, :method => :delete, :confirm => "You sure?",
+                                :title => "Delete #{@album.name}" %>
+		</p>
     </td>
   </tr>
 </table>

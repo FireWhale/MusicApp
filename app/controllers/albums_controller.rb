@@ -54,7 +54,7 @@ class AlbumsController < ApplicationController
 
 	def update
 		@album = Album.find(params[:id])
-		@artists = @album.artists
+		@artists = @album.artists.dup
 		@artists.each do |each| #Updating Artists Statement
 			@existence = each.name #setting an instance variable as each name
 			if params[@existence] == "0" #checking the value of params[instance variable]
@@ -69,7 +69,7 @@ class AlbumsController < ApplicationController
 				@album.artists << Artist.find_by_name(params[:artist][:name])		
 			end
 		end
-		@sources = @album.sources
+		@sources = @album.sources.dup
 		@sources.each do |each| #Updating Sources Statement
 			@existence = each.name #setting an instance variable as each name
 			if params[@existence] == "0" #checking the value of params[instance variable]

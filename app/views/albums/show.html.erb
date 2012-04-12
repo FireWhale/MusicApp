@@ -12,6 +12,15 @@
 		<p>
 			Publisher: <%= @album.publisher %>
 		</p>
+		<% if @album.reference.nil? %>
+			<p>
+				Reference:
+			</p>
+		<% else %>
+			<p>
+				Reference: <%= link_to @album.reference, @album.reference %>
+			</p>
+		<% end %>
 		Artist(s):
 		<% @artists.each do |each| %>
 			<p>	

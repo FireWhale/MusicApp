@@ -9,6 +9,15 @@
 		<p>
 			Activity: <%= @source.activity %>
 		</p>
+		<% if @source.reference.nil? %>
+			<p>
+				Reference:
+			</p>
+		<% else %>
+			<p>
+				Reference: <%= link_to @source.reference, @source.reference %>
+			</p>
+		<% end %>
 		Album(s):
 		<% @albums.each do |each| %>
 			<p>

@@ -1,11 +1,15 @@
 <h1>Edit</h1>
 
 <%= form_for([@artist]) do |f| %>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Edit Artist" %>
-  </div>
+	<div class="field">
+		<%= f.label :name %><br />
+		<%= f.text_field :name %>
+	</div>
+	<div class="field">
+		<%= f.label :reference %><br />
+		<%= f.text_field :reference %>
+	</div>
+	<div class="actions">
+		<%= f.submit "Edit Artist" %>
+	</div>
 <% end %>

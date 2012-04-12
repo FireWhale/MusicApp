@@ -18,6 +18,10 @@
 		<%= f.label "Publisher" %><br />
 		<%= f.text_field :publisher %>
 	</div>		
+	<div class="field">
+		<%= f.label "Reference" %><br />
+		<%= f.text_field :reference %>
+	</div>	
 	Artist(s) (uncheck to remove):	
 	<% @artists.each do |each| %>
 		<div class="field">

@@ -1,5 +1,5 @@
 class Source < ActiveRecord::Base
-	attr_accessible :name, :activity, :obtained
+	attr_accessible :name, :activity, :obtained, :reference
 	
 	has_and_belongs_to_many :albums
 		

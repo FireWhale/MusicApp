@@ -6,7 +6,7 @@
 	</div>
 	<div class="field">
 		<%= f.label :releasedate, "Release Date" -%><br />
-		<%= f.date_select :releasedate %>
+		<%= f.date_select :releasedate, :start_year => 1970, :end_year =>2020 %>
 	</div>
 	<div class="field">
 		<%= f.label :genre %><br />
@@ -15,6 +15,10 @@
 	<div class="field">
 		<%= f.label "Publisher" %><br />
 		<%= f.text_field :publisher %>
+	</div>	
+	<div class="field">
+		<%= f.label "Reference" %><br />
+		<%= f.text_field :reference %>
 	</div>	
 	<%= render 'shared/add_artist_form' %>
 	<%= render 'shared/add_source_form' %>

@@ -2,28 +2,30 @@
   <tr>
     <td class="main">
 		Artist Information!
-		<h1>
-			<%= @artist.name %>
-		</h1>		
+		<h1><%= @artist.name %>	</h1>
+		<% if @parentalias.nil? == false %>
+			<p> Alias of <%= link_to @parent.name, artist_path(@parent.id) %> </p>
+		<% end %>
 		<%= link_to 'Edit Artist', edit_artist_path(@artist) %>
-		<p>
-			Activity: <%= @artist.activity %>
-		</p>
+		<p>	Activity: <%= @artist.activity %>	</p>
 		<% if @artist.reference.nil? %>
 			<p>
 				Reference:
 			</p>
 		<% else %>
-			<p>
-				Reference: <%= link_to @artist.reference, @artist.reference %>
-			</p>
+			<p>	Reference: <%= link_to @artist.reference, @artist.reference %>	</p>
+		<% end %>
+		<% if @aliases.empty? == false %>
+			Alias(es):
+			<% @aliases.each do |each| %>
+				<% @artistalias = Artist.find_by_id(each.alias_id) %>
+				<p>	<%= link_to @artistalias.name, artist_path(@artistalias.id) %>	</p>
+			<% end %><hr>
 		<% end %>
 		Album(s):
 		<% @albums.each do |each| %>
-			<p>
-				<%= link_to each.name, album_path(each) %>
-			</p>
-		<% end %>
+			<p>	<%= link_to each.name, album_path(each) %>	</p>
+		<% end %><hr>
 		Add an Album!
 		<%= render 'shared/create_album_form' %>
 		<%= link_to "delete artist?", @artist, :method => :delete, :confirm => "You sure?",

@@ -1,6 +1,7 @@
 <h1>Edit</h1>
 
-<%= form_for([@artist]) do |f| %>
+<%= form_for @artist do |f| %>
+	<%= render 'shared/error_messages', :object => f.object %>
 	<div class="field">
 		<%= f.label :name %><br />
 		<%= f.text_field :name %>
@@ -9,7 +10,17 @@
 		<%= f.label :reference %><br />
 		<%= f.text_field :reference %>
 	</div>
+	<% if @aliases.empty? == false %>
+		Alias(es) (uncheck to remove):
+		<% @aliases.each do |each| %>
+			<% @artistalias = Artist.find_by_id(each.alias_id) %>
+			<p>	<%= @artistalias.name %>
+			<%= hidden_field_tag @artistalias.name, 0 %>
+			<%= check_box_tag @artistalias.name, 1, true  %>
+		<% end %>
+	<% end %>
+	<%= render 'shared/create_alias_form' %>
 	<div class="actions">
 		<%= f.submit "Edit Artist" %>
 	</div>
-<% end %>
+<% end %><hr>

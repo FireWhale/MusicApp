@@ -3,6 +3,7 @@ class AlbumsController < ApplicationController
 	def index
 		@title = "All Albums"
 		@albums = Album.all
+		@albumssorted = @albums.sort! { |a,b| a.name.downcase <=> b.name.downcase }
 	end
 	
 	def show
@@ -54,13 +55,15 @@ class AlbumsController < ApplicationController
 
 	def update
 		@album = Album.find(params[:id])
-		@artists = @album.artists.dup
-		@artists.each do |each| #Updating Artists Statement
+		#Deleting Associated Artists 
+		@artists = @album.artists.dup 
+		@artists.each do |each| 
 			@existence = each.name #setting an instance variable as each name
 			if params[@existence] == "0" #checking the value of params[instance variable]
 				@album.artists.delete(Artist.find_by_name(each.name)) #delete that artist relationship
 			end
 		end
+		#Creating an Artist Association
 		if params[:artist][:name].to_s.empty? == false #Adding an artist Statement
 			@artistexists = Artist.find_by_name(params[:artist][:name])
 			if @artistexists.nil? == true
@@ -69,13 +72,15 @@ class AlbumsController < ApplicationController
 				@album.artists << Artist.find_by_name(params[:artist][:name])		
 			end
 		end
+		#Deleting Associated Sources
 		@sources = @album.sources.dup
-		@sources.each do |each| #Updating Sources Statement
+		@sources.each do |each| #Updating/Deleting Associated Sources
 			@existence = each.name #setting an instance variable as each name
 			if params[@existence] == "0" #checking the value of params[instance variable]
 				@album.sources.delete(Source.find_by_name(each.name)) #delete that source relationship
 			end
 		end
+		#Creating A Source Association
 		if params[:source][:name].to_s.empty? == false #Adding an source Statement
 			@sourceexists = Source.find_by_name(params[:source][:name])
 			if @sourceexists.nil? == true

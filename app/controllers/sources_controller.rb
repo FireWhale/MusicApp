@@ -3,6 +3,7 @@ class SourcesController < ApplicationController
 	def index
 		@title = "All users"
 		@sources = Source.all
+		@sourcessorted = @sources.sort! { |a,b| a.name.downcase <=> b.name.downcase }
 	end
 	
 	def show

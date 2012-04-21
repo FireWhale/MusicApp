@@ -1,6 +1,7 @@
 <h1>Add an Artist!!</h1>
 
 <%= form_for([@artist]) do |f| %>
+	<%= render 'shared/error_messages', :object => f.object %>
 	<div class="field">
 		<%= f.label :name %><br />
 		<%= f.text_field :name %>

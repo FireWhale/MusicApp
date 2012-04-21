@@ -1,8 +1,10 @@
-<h1>All albums</h1>
+<h1>All albums (<%= @albums.count %>)</h1>
 
 <ul class="albums">
-	<% @albums.each do |album| %>
-		<%= render album %>
+	<% @albumssorted.each do |each| %>
+			<li>
+	      <%= link_to each.name, each %>
+			</li>
 	<% end %>
 </ul>
 

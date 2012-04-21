@@ -1,7 +1,7 @@
-<h1>All Sources</h1>
+<h1>All Sources (<%= @sources.count %>)</h1>
 
 <ul class="sources">
-  <% @sources.each do |each| %>
+  <% @sourcessorted.each do |each| %>
 			<li>
 	      <%= link_to each.name, each %>
 			</li>
